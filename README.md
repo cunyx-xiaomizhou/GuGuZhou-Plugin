@@ -13,3 +13,6 @@ git clone https://github.com/cunyx-xiaomizhou/GuGuZhou-Plugin.git ./plugins/GuGu
 # 使用BGitHub代理安装
 git clone https://bgithub.xyz/cunyx-xiaomizhou/GuGuZhou-Plugin.git ./plugins/GuGuZhou-Plugin/
 ```
+
+### 重要提示
+安装本插件后执行咕咕粥图包安装指令时可能会导致已有的面板图被覆盖，请提前对面板图进行备份，否则一切产生的后果与本插件无关！
