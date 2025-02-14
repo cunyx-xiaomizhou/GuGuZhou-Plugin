@@ -14,7 +14,7 @@ export class xmzPlugin_update extends plugin {
 		{
 		  reg: /^#?(ggz|咕咕粥)(插件)?(强制)?更新$/gi,
 		  fnc: 'update_plugin',
-    permission: 'master'
+                  permission: 'master'
 		}
 	  ]
     });
