@@ -1,0 +1,33 @@
+{
+  "config": {
+    "gs": {
+      "plugin": "miao-plugin",
+      "path": {
+        "normal": "",
+        "super": ""
+      }
+    },
+    "sr": {
+      "plugin": "miao-plugin",
+      "path": {
+        "normal": "",
+        "super": ""
+      }
+    },
+    "zzz": {
+      "plugin": "ZZZ-Plugin",
+      "path": {
+        "normal": "",
+        "super": "null"
+      }
+    },
+    "ww": {
+      "plugin": "miao-plugin",
+      "path": {
+        "normal": "",
+        "super": ""
+      }
+    }
+  },
+  "version": "V 1.0.0"
+}
