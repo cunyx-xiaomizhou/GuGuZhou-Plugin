@@ -24,8 +24,8 @@
     "ww": {
       "plugin": "waves-plugin",
       "path": {
-        "normal": "",
-        "super": ""
+        "normal": "resources/rolePic",
+        "super": "resources/rolePic"
       }
     }
   },
