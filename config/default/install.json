@@ -1,0 +1,25 @@
+{
+  "config":{
+    "gs": {
+      "normal": true,
+      "super": true,
+      "R18": true
+    },
+    "sr": {
+      "normal": true,
+      "super": true,
+      "R18": true
+    },
+    "zzz": {
+      "normal": true,
+      "super": true,
+      "R18": true
+    },
+    "ww": {
+      "normal": true,
+      "super": true,
+      "R18": true
+    }
+  },
+  "version":"V 1.0.0"
+}
