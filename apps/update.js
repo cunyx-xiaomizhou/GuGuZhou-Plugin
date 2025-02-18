@@ -20,7 +20,6 @@ export class ggzPlugin_update extends plugin {
     });
   }
   async update_plugin(e){
-    e.reply(Plugin_Name);
     let Update_Plugin = new update();
 	Update_Plugin.e = e;
 	Update_Plugin.reply = e.reply;
