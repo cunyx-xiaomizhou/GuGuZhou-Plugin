@@ -25,7 +25,7 @@ async function writeJsonFile(filePath, jsonData) {
   }
 }
 
-async function loading(conDir, defDir) {
+async function load(conDir, defDir) {
   Bot.logger.info('--------٩(๑•̀ω•́๑)۶----------');
   Bot.logger.info(`${info.name_zh}${info.version}初始化中......`);
   try {
