@@ -11,7 +11,7 @@ git clone https://github.com/cunyx-xiaomizhou/GuGuZhou-Plugin.git ./plugins/GuGu
 
 ```bash
 # 使用GitHub代理安装
-git clone https://ghfast.top/cunyx-xiaomizhou/GuGuZhou-Plugin.git ./plugins/GuGuZhou-Plugin/
+git clone https://ghfast.top/https://github.com/cunyx-xiaomizhou/GuGuZhou-Plugin.git ./plugins/GuGuZhou-Plugin/
 ```
 ### 🅿️ 使用方法
 > 1. 安装此插件后可以使用`#安装咕咕粥`指令安装适合全龄段人员的面板图；  
