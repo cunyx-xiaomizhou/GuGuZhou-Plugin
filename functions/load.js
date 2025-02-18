@@ -26,8 +26,8 @@ async function writeJsonFile(filePath, jsonData) {
 }
 
 async function load(conDir, defDir) {
-  Bot.logger.info('--------٩(๑•̀ω•́๑)۶----------');
-  Bot.logger.info(`${info.name_zh}${info.version}初始化中......`);
+  logger.info('--------٩(๑•̀ω•́๑)۶----------');
+  logger.info(`${info.name_zh}${info.version}初始化中......`);
   try {
     const info = info();
     const files = await fs.readdir(defDir);
