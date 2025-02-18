@@ -26,8 +26,9 @@ async function writeJsonFile(filePath, jsonData) {
 }
 
 async function load(conDir, defDir) {
+  let info_ = await info();
   logger.info('--------٩(๑•̀ω•́๑)۶----------');
-  logger.info(`${info.name_zh}${info.version}初始化中......`);
+  logger.info(`${info_.name_zh}${info_.version}初始化中......`);
   try {
     const files = await fs.readdir(defDir);
     for (const file of files) {
@@ -53,7 +54,7 @@ async function load(conDir, defDir) {
     logger.error("读取文件夹失败：", error);
     process.exit(1);
   }
-  Bot.logger.info(`${info.name_zh}${info.version}初始化完成！`);
+  Bot.logger.info(`${info_.name_zh}${info_.version}初始化完成！`);
 }
 
 export { load };
