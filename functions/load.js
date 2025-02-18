@@ -6,7 +6,6 @@
 import path from 'path';
 import { info } from './info.js';
 import fs from 'fs/promises';
-const info = info();
 
 async function readJsonFile(filePath) {
   try {
