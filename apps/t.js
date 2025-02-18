@@ -7,11 +7,11 @@ export class ggz_plugin_t extends plugin {
       event:"message",
       priority:1,/*优先级*/
       rule:[
-        {reg:"^#?ggzt",fnc:"ggzt",}
+        {reg:"#?ggzt",fnc:"ggze"}
       ]
     });
   }
-  async ggzt(e) {
+  async ggze(e) {
     e.reply(await ggz.info().name);
   }
 }
