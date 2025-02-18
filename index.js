@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import ggz from '#ggz';
 const defDir = ggz.path + '/config/default';
 const configDir = ggz.path + '/config/config';
-xmz.loading(configDir,defDir);
+ggz.load(configDir,defDir);
 const files = fs.readdirSync(`./plugins/${ggz.path}/apps`).filter(file => file.endsWith('.js'));
 let ret = [];
 files.forEach((file) => {
