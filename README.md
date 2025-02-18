@@ -1,5 +1,5 @@
 # GuGuZhou-Plugin
-咕咕粥插件是Miao-Yunzai和TRSS-Yunzai的图包管理插件，包含原神、星铁和绝区零的面板背景图
+咕咕粥插件是Miao-Yunzai和TRSS-Yunzai的图包管理插件，包含原神、星铁、绝区零和鸣潮的面板背景图
 
 ### 👀 安装教程
 由于种种原因，咕咕粥图包仅有GitHub源，但插件拥有Gitee源
