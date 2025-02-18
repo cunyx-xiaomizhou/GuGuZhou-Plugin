@@ -1,7 +1,7 @@
 import ggz from '#ggz';
 import { execSync } from 'child_process';
 import { update } from '../../other/update.js';
-const Plugin_Name = ggz.name;
+const Plugin_Name = ggz.info().name;
 
 export class xmzPlugin_update extends plugin {
   constructor () {
