@@ -11,5 +11,5 @@ export class ggz_plugin_t extends plugin {
       ]
     });
   }
-  async ggzt() {e.reply(ggz.info.name)}
+  async ggzt(e) {e.reply(ggz.info.name)}
 }
