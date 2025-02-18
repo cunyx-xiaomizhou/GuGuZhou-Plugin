@@ -3,26 +3,26 @@
     "gs": {
       "plugin": "miao-plugin",
       "path": {
-        "normal": "",
-        "super": ""
+        "normal": "resources/profile/normal-character",
+        "super": "resources/profile/super-character"
       }
     },
     "sr": {
       "plugin": "miao-plugin",
       "path": {
-        "normal": "",
-        "super": ""
+        "normal": "resources/profile/normal-character",
+        "super": "resources/profile/super-character"
       }
     },
     "zzz": {
       "plugin": "ZZZ-Plugin",
       "path": {
-        "normal": "",
-        "super": "null"
+        "normal": "resources/images/panel",
+        "super": "resources/images/panel"
       }
     },
     "ww": {
-      "plugin": "miao-plugin",
+      "plugin": "waves-plugin",
       "path": {
         "normal": "",
         "super": ""
