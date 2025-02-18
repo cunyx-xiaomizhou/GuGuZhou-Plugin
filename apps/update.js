@@ -3,7 +3,7 @@ import { execSync } from 'child_process';
 import { update } from '../../other/update.js';
 const Plugin_Name = (await ggz.info()).name;
 
-export class xmzPlugin_update extends plugin {
+export class ggzPlugin_update extends plugin {
   constructor () {
 	super({
 	  name: '咕咕粥插件更新',
