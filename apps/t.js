@@ -12,7 +12,7 @@ export class ggz_plugin_t extends plugin {
     });
   }
   async gg(e) {
-    e.reply(await ggz.info().name);
+    e.reply(await ggz.info.name);
     Bot.logger.mark(await ggz.info().name);
   }
 }
