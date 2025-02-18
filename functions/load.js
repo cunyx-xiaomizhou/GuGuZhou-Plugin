@@ -6,6 +6,7 @@
 import path from 'path';
 import { info } from './info.js';
 import fs from 'fs/promises';
+const info = info();
 
 async function readJsonFile(filePath) {
   try {
@@ -27,7 +28,7 @@ async function writeJsonFile(filePath, jsonData) {
 
 async function loading(conDir, defDir) {
   Bot.logger.info('--------٩(๑•̀ω•́๑)۶----------');
-  Bot.logger.info(`${info().name_zh}${info().version}初始化中......`);
+  Bot.logger.info(`${info.name_zh}${info.version}初始化中......`);
   try {
     const files = await fs.readdir(defDir);
     for (const file of files) {
@@ -53,7 +54,7 @@ async function loading(conDir, defDir) {
     logger.error("读取文件夹失败：", error);
     process.exit(1);
   }
-  Bot.logger.info(`${info().name_zh}${info().version}初始化完成！`);
+  Bot.logger.info(`${info.name_zh}${info.version}初始化完成！`);
 }
 
 export { load };
