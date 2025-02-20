@@ -3,22 +3,26 @@
     "gs": {
       "normal": true,
       "super": true,
-      "R18": true
+      "R18": true,
+      "R18-pro": false
     },
     "sr": {
       "normal": true,
       "super": true,
-      "R18": true
+      "R18": true,
+      "R18-pro": false
     },
     "zzz": {
       "normal": true,
       "super": true,
-      "R18": true
+      "R18": true,
+      "R18-pro": false
     },
     "ww": {
       "normal": true,
       "super": true,
-      "R18": true
+      "R18": true,
+      "R18-pro": false
     }
   },
   "version":"V 1.0.0"
