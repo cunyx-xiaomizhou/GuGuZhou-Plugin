@@ -15,7 +15,10 @@ export class downloadImagePackage_ggz extends plugin {
       ]
     })
   }
-
+  async downloadImagePackage(e) {
+    e.reply(await ggz.config('source', 'source'),true);
+  }
+  /*
     async updateFanSKYPlugin(e) {
         if (!e.isMaster) {
             return true
@@ -42,4 +45,5 @@ export class downloadImagePackage_ggz extends plugin {
         })
         return true
     }
+    */
 }
