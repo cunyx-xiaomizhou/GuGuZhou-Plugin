@@ -3,7 +3,7 @@ import ggz from '#ggz';
 const defDir = ggz.path + '/config/default';
 const configDir = ggz.path + '/config/config';
 ggz.load(configDir,defDir);
-const files = fs.readdirSync(`./plugins/${(await ggz.info()).name}/apps`).filter(file => file.endsWith('.js'));
+const files = fs.readdirSync(`./plugins/GuGuZhou-Plugin/apps`).filter(file => file.endsWith('.js'));
 let ret = [];
 files.forEach((file) => {
   ret.push(import(`./apps/${file}`));
