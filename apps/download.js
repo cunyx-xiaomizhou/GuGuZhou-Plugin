@@ -1,23 +1,20 @@
+import ggz from '#ggz';
 import {exec} from "child_process";
-import plugin from "../../../lib/plugins/plugin.js";
-
-let prosessPath=process.cwd()
-let fansPluginPath= `${process.cwd()}/plugins/FanSky_Qs/`
-export class UpdatePlugin extends plugin {
-    constructor() {
-        super({
-            name: 'FanSky_Qs插件更新',
-            dsc: 'FanSky_Qs插件更新',
-            event: 'message',
-            priority: 1,
-            rule: [
-                {
-                    reg: /^#(fan|Fansky|Fan|fans)(强制)?更新$/,
-                    fnc: 'updateFanSKYPlugin',
-                },
-            ]
-        })
-    }
+export class downloadImagePackage_ggz extends plugin {
+  constructor() {
+    super({
+      name: '咕咕粥图包下载器',
+      dsc: '下载各游戏的咕咕粥面板图包',
+      event: 'message',
+      priority: 1,
+      rule: [
+        {
+          reg: /^(ggz|咕咕粥)下载((原神|ys|gs|genshin)|(崩坏：星穹铁道|崩铁|星铁|sr)|(绝区零|zzz)|(鸣潮|ww|waves?))(图包)?$/gi,
+          fnc: 'downloadImagePackage',
+        },
+      ]
+    })
+  }
 
     async updateFanSKYPlugin(e) {
         if (!e.isMaster) {
