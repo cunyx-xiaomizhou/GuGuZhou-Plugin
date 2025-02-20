@@ -1,0 +1,9 @@
+{
+    "config": {
+        "source": "gitee",
+        "gitee": "https://gitee.com/cunyx/GuGuZhou-",
+        "github": "https://github.com/cunyx-xiaomizhou/GuGuZhou-",
+        "customize": ""
+    },
+    "version": "V 1.0.0"
+}
