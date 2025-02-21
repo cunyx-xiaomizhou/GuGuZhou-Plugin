@@ -2,7 +2,7 @@ import { exec } from 'child_process';
 
 let downloadingLinks = {};
 
-function downloadGitRepo(e, path, link, game = '') {
+function downloadGitRepo(e, link, path, game = '') {
   let taskName;
   switch(game) {
     case 'GS':
