@@ -2,9 +2,23 @@ import { exec } from 'child_process';
 
 let downloadingLinks = {};
 
-function downloadGitRepo(e, path, link, taskName = '') {
-  if (!taskName) {
-    taskName = link;
+function downloadGitRepo(e, path, link, game = '') {
+  let taskName;
+  switch(game) {
+    case 'GS':
+      taskName = '咕咕粥原神图包';
+    case 'SR':
+      taskName = '咕咕粥星铁图包';
+    case 'ZZZ':
+      taskName = '咕咕粥原神图包';
+    case 'WW':
+      taskName = '咕咕粥鸣潮图包';
+    default:
+      taskName = '未知的咕咕粥扩展图包';
+  }
+  if (fs.statSync(path).isDirectory()) {
+    e.reply(`「${taskName}」已经下载过了哦，无需再次下载~`);
+    return;
   }
 
   if (downloadingLinks[link]) {
