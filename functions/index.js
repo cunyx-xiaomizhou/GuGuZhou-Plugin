@@ -1,6 +1,6 @@
 import { info } from './info.js';
 import { load } from './load.js';
-import down from './down/index.js';
+import pkg from './pkg/index.js';
 import { config } from './../config/config.js';
 const pp = `${process.cwd()}/plugins/${(await info()).name}`
 let ggz = {
@@ -8,6 +8,6 @@ let ggz = {
   load: load,
   config: config,
   path: pp,
-  down: down
+  pkg: pkg
 };
 export default ggz;
