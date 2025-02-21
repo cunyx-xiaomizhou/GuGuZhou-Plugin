@@ -1,11 +1,13 @@
 import { info } from './info.js';
 import { load } from './load.js';
+import down from './down.js';
 import { config } from './../config/config.js';
 const pp = `${process.cwd()}/plugins/${(await info()).name}`
 let ggz = {
   info: info,
   load: load,
   config: config,
-  path: pp
+  path: pp,
+  down: down
 };
 export default ggz;
