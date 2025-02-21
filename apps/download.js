@@ -16,7 +16,7 @@ export class downloadImagePackage_ggz extends plugin {
     })
   }
   async imagePackage(e) {
-    let game = await game(e);
+    let game = await ggz.game(e);
     var rp = `${await ggz.pp}/resource/${game}`;
     if (e.msg.includes('下载')) {
       var source = await ggz.config('source', 'source');
@@ -27,24 +27,6 @@ export class downloadImagePackage_ggz extends plugin {
     } else if (e.msg.includes('删除')) {
       
     }
-  }
-  async game(e) {
-    const msg = e.msg.toLowerCase();
-    const regex = /^(ggz|咕咕粥)下载((原神|ys|gs|genshin)|(崩坏：星穹铁道|崩铁|星铁|sr)|(绝区零|zzz)|(鸣潮|ww|waves?))(图包)?$/gi;
-    const match = regex.exec(msg);
-
-    if (match) {
-      if (match[3]) {
-       return "YS";
-      } else if (match[4]) {
-        return "SR";
-      } else if (match[5]) {
-        return "ZZZ";
-      } else if (match[6]) {
-        return "WW";
-      }
-    }
-    return false;
   }
   /*
     async updateFanSKYPlugin(e) {
