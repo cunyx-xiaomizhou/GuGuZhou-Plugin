@@ -17,11 +17,11 @@ export class downloadImagePackage_ggz extends plugin {
   }
   async downloadImagePackage(e) {
     var source = await ggz.config('source', 'source');
-    var game = await game(e);
+    var game = await this.game(e);
     var download_link = await ggz.config('source', source) + `${game}.git`;
     e.reply(download_link);
   }
-  async determineDownloadType(e) {
+  async game(e) {
     const msg = e.msg.toLowerCase();
     const regex = /^(ggz|咕咕粥)下载((原神|ys|gs|genshin)|(崩坏：星穹铁道|崩铁|星铁|sr)|(绝区零|zzz)|(鸣潮|ww|waves?))(图包)?$/gi;
     const match = regex.exec(msg);
