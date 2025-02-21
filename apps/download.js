@@ -21,6 +21,24 @@ export class downloadImagePackage_ggz extends plugin {
     var download_link = await ggz.config('source', source) + `${game}.git`;
     e.reply(download_link);
   }
+  async determineDownloadType(e) {
+    const msg = e.msg.toLowerCase();
+    const regex = /^(ggz|咕咕粥)下载((原神|ys|gs|genshin)|(崩坏：星穹铁道|崩铁|星铁|sr)|(绝区零|zzz)|(鸣潮|ww|waves?))(图包)?$/gi;
+    const match = regex.exec(msg);
+
+    if (match) {
+      if (match[3]) {
+       return "YS";
+      } else if (match[4]) {
+        return "SR";
+      } else if (match[5]) {
+        return "ZZZ";
+      } else if (match[6]) {
+        return "WW";
+      }
+    }
+    return false;
+  }
   /*
     async updateFanSKYPlugin(e) {
         if (!e.isMaster) {
@@ -49,23 +67,4 @@ export class downloadImagePackage_ggz extends plugin {
         return true
     }
     */
-}
-async function game(e) {
-  const msg = e.msg.toLowerCase();
-  const regex = /^(ggz|咕咕粥)下载((原神|ys|gs|genshin)|(崩坏：星穹铁道|崩铁|星铁|sr)|(绝区零|zzz)|(鸣潮|ww|waves?))(图包)?$/gi;
-  const match = regex.exec(msg);
-
-  if (match) {
-    if (match[3]) {
-      return "YS";
-    } else if (match[4]) {
-      return "SR";
-    } else if (match[5]) {
-      return "ZZZ";
-    } else if (match[6]) {
-      return "WW";
-    }
-  }
-
-  return false;
 }
