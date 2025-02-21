@@ -21,7 +21,7 @@ export class downloadImagePackage_ggz extends plugin {
     if (e.msg.includes('下载')) {
       var source = await ggz.config('source', 'source');
       var download_link = await ggz.config('source', source) + `${game}.git`;
-      ggz.down.down(e, download_link, rp);
+      ggz.pkg.down.download(e, download_link, rp, game);
     } else if (e.msg.includes('更新')) {
 
     } else if (e.msg.includes('删除')) {
