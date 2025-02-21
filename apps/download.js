@@ -3,23 +3,30 @@ import {exec} from "child_process";
 export class downloadImagePackage_ggz extends plugin {
   constructor() {
     super({
-      name: '咕咕粥图包下载器',
-      dsc: '下载各游戏的咕咕粥面板图包',
+      name: '咕咕粥图包管理器',
+      dsc: '下载或更新各游戏的咕咕粥面板图包',
       event: 'message',
       priority: 1,
       rule: [
         {
-          reg: /^(ggz|咕咕粥)下载((原神|ys|gs|genshin)|(崩坏：星穹铁道|崩铁|星铁|sr)|(绝区零|zzz)|(鸣潮|ww|waves?))(图包)?$/gi,
-          fnc: 'downloadImagePackage',
+          reg: /^(ggz|咕咕粥)(下载|更新)((原神|ys|gs|genshin)|(崩坏：星穹铁道|崩铁|星铁|sr)|(绝区零|zzz)|(鸣潮|ww|waves?))(图包)?$/gi,
+          fnc: 'imagePackage',
         },
       ]
     })
   }
-  async downloadImagePackage(e) {
-    var source = await ggz.config('source', 'source');
-    var game = await this.game(e);
-    var download_link = await ggz.config('source', source) + `${game}.git`;
-    e.reply(download_link);
+  async imagePackage(e) {
+    let game = await game(e);
+    var rp = `${await ggz.pp}/resource/${game}`;
+    if (e.msg.includes('下载')) {
+      var source = await ggz.config('source', 'source');
+      var download_link = await ggz.config('source', source) + `${game}.git`;
+      ggz.down.down(e, download_link, rp);
+    } else if (e.msg.includes('更新')) {
+
+    } else if (e.msg.includes('删除')) {
+      
+    }
   }
   async game(e) {
     const msg = e.msg.toLowerCase();
