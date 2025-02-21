@@ -80,9 +80,9 @@ function checkDownloadProgress(e, link) {
   }
 }
 
-const download = {
+const down = {
   download: downloadGitRepo,
   check: checkDownloadProgress
 };
 
-export default download;
+export default down;
