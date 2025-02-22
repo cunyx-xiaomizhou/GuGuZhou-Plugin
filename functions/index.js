@@ -10,7 +10,7 @@ async function game(e) {
   const match = regex.exec(msg);
   if (match) {
     if (match[3]) {
-      return "YS";
+      return "GS";
     } else if (match[4]) {
       return "SR";
     } else if (match[5]) {
