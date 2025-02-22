@@ -7,13 +7,13 @@ function downloadGitRepo(e, link, path, game = '') {
   let taskName;
   switch(game) {
     case 'GS':
-      taskName = '咕咕粥原神图包';
+      taskName = '咕咕粥原神图包'; break;
     case 'SR':
-      taskName = '咕咕粥星铁图包';
+      taskName = '咕咕粥星铁图包'; break;
     case 'ZZZ':
-      taskName = '咕咕粥原神图包';
+      taskName = '咕咕粥原神图包'; break;
     case 'WW':
-      taskName = '咕咕粥鸣潮图包';
+      taskName = '咕咕粥鸣潮图包'; break;
     default:
       taskName = '未知的咕咕粥扩展图包';
   }
