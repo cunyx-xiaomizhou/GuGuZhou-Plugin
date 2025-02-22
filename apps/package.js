@@ -21,7 +21,13 @@ export class downloadImagePackage_ggz extends plugin {
     if (e.msg.includes('下载')) {
       var source = await ggz.config('source', 'source');
       var download_link = await ggz.config('source', source) + `${game}.git`;
-      ggz.pkg.down.download(e, download_link, rp, game);
+      try {
+        e.reply('开始尝试下载咕咕粥图包至本地',true);
+        ggz.pkg.down.download(e, download_link, rp, game);
+      } catch (err) {
+        logger.error(`[${(await ggz.info()).name}]${download_link}克隆本地失败\n\n${err}`);
+        e.reply(`下载过程出现错误啦！请截图反馈~\n\n${err}`,true);
+      }
     } else if (e.msg.includes('更新')) {
 
     } else if (e.msg.includes('删除')) {
