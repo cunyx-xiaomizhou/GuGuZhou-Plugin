@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { exec } from 'child_process';
 
 let downloadingLinks = {};
