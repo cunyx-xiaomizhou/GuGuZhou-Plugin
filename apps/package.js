@@ -16,6 +16,10 @@ export class downloadImagePackage_ggz extends plugin {
     })
   }
   async imagePackage(e) {
+    if (!e.isMaster) {
+      e.reply(`只有主人才可以命令${Bot.nickname || '咕咕粥'}哦(๑＞ڡ＜)☆`);
+      return true;
+    }
     let game = await ggz.game(e);
     var rp = `${await ggz.path}/resource/${game}`;
     if (e.msg.includes('下载')) {
