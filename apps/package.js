@@ -17,7 +17,7 @@ export class downloadImagePackage_ggz extends plugin {
   }
   async imagePackage(e) {
     let game = await ggz.game(e);
-    var rp = `${await ggz.pp}/resource/${game}`;
+    var rp = `${await ggz.path}/resource/${game}`;
     if (e.msg.includes('下载')) {
       var source = await ggz.config('source', 'source');
       var download_link = await ggz.config('source', source) + `${game}.git`;
