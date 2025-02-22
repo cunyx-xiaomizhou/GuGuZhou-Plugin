@@ -17,7 +17,7 @@ function downloadGitRepo(e, link, path, game = '') {
     default:
       taskName = '未知的咕咕粥扩展图包';
   }
-  if (fs.statSync(path).isDirectory()) {
+  if (fs.existsSync(path)) {
     e.reply(`「${taskName}」已经下载过了哦，无需再次下载~`);
     return;
   }
