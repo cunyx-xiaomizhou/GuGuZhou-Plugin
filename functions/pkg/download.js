@@ -11,7 +11,7 @@ function downloadGitRepo(e, link, path, game = '') {
     case 'SR':
       taskName = '咕咕粥星铁图包'; break;
     case 'ZZZ':
-      taskName = '咕咕粥原神图包'; break;
+      taskName = '咕咕粥绝区零图包'; break;
     case 'WW':
       taskName = '咕咕粥鸣潮图包'; break;
     default:
