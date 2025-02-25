@@ -1,4 +1,9 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: 'Genshin', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+@font-face {
+    font-family: 'Genshin';
+    src: url('./font/Genshin.ttf');
 }
