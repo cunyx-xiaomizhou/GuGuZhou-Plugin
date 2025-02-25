@@ -1,6 +1,7 @@
 import { info } from './info.js';
 import { load } from './load.js';
 import pkg from './pkg/index.js';
+import { puppeteer } from './puppeteer.js';
 import { config } from './../config/config.js';
 const pp = `${process.cwd()}/plugins/${(await info()).name}`
 
@@ -35,6 +36,7 @@ let ggz = {
   path: pp,
   pkg: pkg,
   game: game,
-  replace: replace
+  replace: replace,
+  puppeteer: puppeteer
 };
 export default ggz;
