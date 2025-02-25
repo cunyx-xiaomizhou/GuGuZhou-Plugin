@@ -1,5 +1,5 @@
 body {
-    background: url('{{ggz_state_back}}');
+    background: url('./resource/img/state_back.png');
     background-size: cover;
     display: flex;
     justify-content: center;
