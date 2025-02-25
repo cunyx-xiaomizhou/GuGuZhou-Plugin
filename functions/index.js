@@ -22,12 +22,19 @@ async function game(e) {
   return false;
 }
 
+async function replace(string, array) {
+  return string.replace(/\{\{(\w+)\}\}/g, (match, p1) => {
+    return array.hasOwnProperty(p1) ? array[p1] : match;
+  });
+}
+
 let ggz = {
   info: info,
   load: load,
   config: config,
   path: pp,
   pkg: pkg,
-  game: game
+  game: game,
+  replace: replace
 };
 export default ggz;
