@@ -7,7 +7,7 @@ const pp = `${process.cwd()}/plugins/${(await info()).name}`
 
 async function game(e) {
   const msg = e.msg.toLowerCase();
-  const regex = /^(ggz|咕咕粥)下载((原神|ys|gs|genshin)|(崩坏：星穹铁道|崩铁|星铁|sr)|(绝区零|zzz)|(鸣潮|ww|waves?))(图包)?$/gi;
+  const regex = /^(ggz|咕咕粥)(下载|更新|删除)((原神|ys|gs|genshin)|(崩坏：星穹铁道|崩铁|星铁|sr)|(绝区零|zzz)|(鸣潮|ww|waves?))(图包)?$/gi;
   const match = regex.exec(msg);
   if (match) {
     if (match[3]) {
