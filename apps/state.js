@@ -43,6 +43,7 @@ export class ggz_state extends plugin {
       ).v,
       uin: Bot.uin || 2996849867,
       nick: Bot.nickname || "云崽机器人",
+      pp: ggz.path
     };
     let htmlContent = await fs.readFile(
       path.join(__dirname, "../resource/html/state.html"),
@@ -59,7 +60,16 @@ export class ggz_state extends plugin {
     htmlContent = await ggz.replace(htmlContent, value);
     logger.info(htmlContent)
     const replacedContent = await ggz.replace(htmlContent, value);
-    await e.reply(segment.image(await ggz.puppeteer(replacedContent, "html", "buffer")));
+    await e.reply(segment.image('base64://'+(await ggz.puppeteer(replacedContent, "html", "base64"))));
+
+    // await e.reply([
+    //   `=== 咕咕粥状态报告 ===\nUID: ${Bot.uin || 2996849867} | 昵称: ${Bot.nickname || '云崽机器人'}`,
+    //   `核心版本: ${coreVersion}\n云端版本:${(await this.execGitShow(path.join(__dirname, '../'),"package.json")).version}\n〓〓〓〓〓〓〓〓〓`,
+    //   ...Object.entries(PROJECT_MAP).map(([k, v]) => {
+    //     const { name, status, local, git } = localData[k];
+    //     return status ? `${v}：${status}` : `${v}：\n  本地 » ${local}\n  Git » ${git}`;
+    //   })
+    // ].join('\n'));
   }
 
   async getLocalVersions(basePath) {
