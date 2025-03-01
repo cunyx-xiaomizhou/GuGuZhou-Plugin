@@ -10,6 +10,7 @@ async function puppeteer(data, t = "url", r = "buffer") {
         "--disable-setuid-sandbox",
         "--no-sandbox",
         "--no-zygote",
+        "--allow-file-access-from-files"
       ],
     });
     const page = await browser.newPage();
