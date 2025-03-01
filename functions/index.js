@@ -13,13 +13,13 @@ async function game(e) {
     /^(ggz|咕咕粥)(下载|更新|删除)((原神|ys|gs|genshin)|(崩坏：星穹铁道|崩铁|星铁|sr)|(绝区零|zzz)|(鸣潮|ww|waves?))(图包)?$/gi;
   const match = regex.exec(msg);
   if (match) {
-    if (match[3]) {
+    if (match[4]) {
       return "GS";
-    } else if (match[4]) {
-      return "SR";
     } else if (match[5]) {
-      return "ZZZ";
+      return "SR";
     } else if (match[6]) {
+      return "ZZZ";
+    } else if (match[7]) {
       return "WW";
     }
   }
