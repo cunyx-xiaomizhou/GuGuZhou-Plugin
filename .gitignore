@@ -1,3 +1,7 @@
 node_modules/*
 
 config/config/*
+resource/GS/*
+resource/WW/*
+resource/SR/*
+resource/ZZZ/*
