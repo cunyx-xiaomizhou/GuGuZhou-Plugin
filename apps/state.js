@@ -76,7 +76,7 @@ export class ggz_state extends plugin {
     return Object.fromEntries(
       await Promise.all(
         Object.keys(PROJECT_MAP).map(async (proj) => {
-          const dir = path.join(basePath, proj.toLowerCase());
+          const dir = path.join(basePath, proj);
           return [
             proj,
             await fs.access(dir).then(
