@@ -13,7 +13,7 @@ function downloadGitRepo(e, link, path, game = "") {
       taskName = "咕咕粥星铁图包";
       break;
     case "ZZZ":
-      taskName = "咕咕粥原神图包";
+      taskName = "咕咕粥绝区零图包";
       break;
     case "WW":
       taskName = "咕咕粥鸣潮图包";
