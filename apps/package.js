@@ -1,41 +1,41 @@
-import ggz from '#ggz';
-import {exec} from "child_process";
+import ggz from "#ggz";
+import { exec } from "child_process";
 export class downloadImagePackage_ggz extends plugin {
   constructor() {
     super({
-      name: '咕咕粥图包管理器',
-      dsc: '下载或更新各游戏的咕咕粥面板图包',
-      event: 'message',
+      name: "咕咕粥图包管理器",
+      dsc: "下载或更新各游戏的咕咕粥面板图包",
+      event: "message",
       priority: 1,
       rule: [
         {
           reg: /^(ggz|咕咕粥)(下载|更新)((原神|ys|gs|genshin)|(崩坏：星穹铁道|崩铁|星铁|sr)|(绝区零|zzz)|(鸣潮|ww|waves?))(图包)?$/gi,
-          fnc: 'imagePackage',
+          fnc: "imagePackage",
         },
-      ]
-    })
+      ],
+    });
   }
   async imagePackage(e) {
     if (!e.isMaster) {
-      e.reply(`只有主人才可以命令${Bot.nickname || '咕咕粥'}哦(๑＞ڡ＜)☆`);
+      e.reply(`只有主人才可以命令${Bot.nickname || "咕咕粥"}哦(๑＞ڡ＜)☆`);
       return true;
     }
     let game = await ggz.game(e);
     var rp = `${await ggz.path}/resource/${game}`;
-    if (e.msg.includes('下载')) {
-      var source = await ggz.config('source', 'source');
-      var download_link = await ggz.config('source', source) + `${game}.git`;
+    if (e.msg.includes("下载")) {
+      var source = await ggz.config("source", "source");
+      var download_link = (await ggz.config("source", source)) + `${game}.git`;
       try {
-        e.reply('开始尝试下载咕咕粥图包至本地',true);
+        e.reply("开始尝试下载咕咕粥图包至本地", true);
         ggz.pkg.down.download(e, download_link, rp, game);
       } catch (err) {
-        logger.error(`[${(await ggz.info()).name}]${download_link}克隆本地失败\n\n${err}`);
-        e.reply(`下载过程出现错误啦！请截图反馈~\n\n${err}`,true);
+        logger.error(
+          `[${(await ggz.info()).name}]${download_link}克隆本地失败\n\n${err}`,
+        );
+        e.reply(`下载过程出现错误啦！请截图反馈~\n\n${err}`, true);
       }
-    } else if (e.msg.includes('更新')) {
-
-    } else if (e.msg.includes('删除')) {
-      
+    } else if (e.msg.includes("更新")) {
+    } else if (e.msg.includes("删除")) {
     }
   }
   /*

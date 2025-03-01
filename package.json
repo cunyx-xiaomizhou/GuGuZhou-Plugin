@@ -5,8 +5,13 @@
   "author": "@最好喝的小米粥, @咕咕牛",
   "description": "咕咕粥插件是Miao-Yunzai和TRSS-Yunzai的图包管理插件，包含原神、星铁和绝区零的面板背景图",
   "type": "module",
+  "scripts": {
+    "fix": "npx prettier --write **/*.js && npx prettier --write *.js"
+  },
   "imports": {
     "#ggz": "./functions/index.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "prettier": "^3.5.2"
+  }
 }

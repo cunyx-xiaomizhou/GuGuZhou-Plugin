@@ -1,21 +1,25 @@
-import fs from 'fs';
-import { exec } from 'child_process';
+import fs from "fs";
+import { exec } from "child_process";
 
 let downloadingLinks = {};
 
-function downloadGitRepo(e, link, path, game = '') {
+function downloadGitRepo(e, link, path, game = "") {
   let taskName;
-  switch(game) {
-    case 'GS':
-      taskName = '咕咕粥原神图包'; break;
-    case 'SR':
-      taskName = '咕咕粥星铁图包'; break;
-    case 'ZZZ':
-      taskName = '咕咕粥原神图包'; break;
-    case 'WW':
-      taskName = '咕咕粥鸣潮图包'; break;
+  switch (game) {
+    case "GS":
+      taskName = "咕咕粥原神图包";
+      break;
+    case "SR":
+      taskName = "咕咕粥星铁图包";
+      break;
+    case "ZZZ":
+      taskName = "咕咕粥原神图包";
+      break;
+    case "WW":
+      taskName = "咕咕粥鸣潮图包";
+      break;
     default:
-      taskName = '未知的咕咕粥扩展图包';
+      taskName = "未知的咕咕粥扩展图包";
   }
   if (fs.existsSync(path)) {
     e.reply(`「${taskName}」已经下载过了哦，无需再次下载~`);
@@ -37,7 +41,7 @@ function downloadGitRepo(e, link, path, game = '') {
   downloadingLinks[link] = {
     taskName,
     progress: 0,
-    process: null
+    process: null,
   };
 
   const command = `git clone ${link} ${path}`;
@@ -45,10 +49,10 @@ function downloadGitRepo(e, link, path, game = '') {
 
   downloadingLinks[link].process = downloadProcess;
 
-  downloadProcess.stdout.on('data', (data) => {
+  downloadProcess.stdout.on("data", (data) => {
     const output = data.toString();
     console.log(output);
-    if (output.includes('%')) {
+    if (output.includes("%")) {
       const progressMatch = output.match(/(\d+)%/);
       if (progressMatch) {
         downloadingLinks[link].progress = progressMatch[1];
@@ -56,7 +60,7 @@ function downloadGitRepo(e, link, path, game = '') {
     }
   });
 
-  downloadProcess.on('close', (code) => {
+  downloadProcess.on("close", (code) => {
     if (code === 0) {
       e.reply(`报告主人！「${taskName}」下载完成`, true);
     } else {
@@ -66,7 +70,7 @@ function downloadGitRepo(e, link, path, game = '') {
     delete downloadingLinks[link];
   });
 
-  downloadProcess.on('error', (err) => {
+  downloadProcess.on("error", (err) => {
     e.reply(`报告主人！下载「${taskName}」出现了错误诶\n\n${err}`, true);
     delete downloadingLinks[link];
   });
@@ -77,13 +81,13 @@ function checkDownloadProgress(e, link) {
     const { taskName, progress } = downloadingLinks[link];
     e.reply(`「${taskName}」当前下载进度: ${progress}%`, true);
   } else {
-    e.reply('没有找到相应的下载任务或任务已完成', true);
+    e.reply("没有找到相应的下载任务或任务已完成", true);
   }
 }
 
 const download = {
   download: downloadGitRepo,
-  check: checkDownloadProgress
+  check: checkDownloadProgress,
 };
 
 export default download;
