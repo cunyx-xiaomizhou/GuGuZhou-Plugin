@@ -1,4 +1,4 @@
-import { puppeteer as Pup } from 'puppeteer';
+import Pup from 'puppeteer';
 
 async function puppeteer(data, t = 'url', r = 'buffer') {
     let browser;
