@@ -49,7 +49,7 @@ export class ggz_state extends plugin {
       "utf-8",
     );
     const replacedContent = await ggz.replace(htmlContent, value);
-    await e.reply(segment.image(await ggz.puppeteer(replacedContent, "html")));
+    await e.reply(segment.image(await ggz.puppeteer(replacedContent, "html", "base64")));
 
     // await e.reply([
     //   `=== 咕咕粥状态报告 ===\nUID: ${Bot.uin || 2996849867} | 昵称: ${Bot.nickname || '云崽机器人'}`,
