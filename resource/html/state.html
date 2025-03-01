@@ -4,8 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GuGuZhou-Plugin 状态</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/state.css">
+    <style>
+        * {
+            font-family: 'Genshin';
+            padding: 0px;
+            margin: 0px;
+        }
+        @font-face {
+            font-family: 'Genshin', sans-serif;
+            src: url('file://{{pp}}/resource/font/Genshin.woff') format('woff'),
+                 url('file://{{pp}}/resource/font/Genshin.ttf') format('typeture');
+        }
+        body {
+            background: url('file://{{pp}}/resource/img/state_back.png');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #333;
+            margin: 0;
+        }
+
+        .header .robot-id {
+            font-size: 14px;
+            color: #666;
+            margin-left: 10px;
+        }
+
+        .plugin-info {
+            margin-bottom: 20px;
+        }
+
+        .plugin-info h2 {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .plugin-info p {
+            font-size: 16px;
+            color: #777;
+            margin: 5px 0;
+        }
+
+        .resource-packs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .resource-pack {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .resource-pack img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+
+        .resource-pack-info {
+            flex: 1;
+        }
+
+        .resource-pack-info h3 {
+            font-size: 16px;
+            color: #444;
+            margin: 0;
+        }
+
+        .resource-pack-info p {
+            font-size: 14px;
+            color: #666;
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -23,7 +132,7 @@
 
         <div class="resource-packs">
             <div class="resource-pack">
-                <img src="../img/ys.png" alt="原神">
+                <img src="file://{{pp}}/resource/img/ys.png" alt="原神">
                 <div class="resource-pack-info">
                     <h3>原神图包</h3>
                     <p>当前版本: {{ggz_ys_version}}</p>
@@ -31,7 +140,7 @@
                 </div>
             </div>
             <div class="resource-pack">
-                <img src="../img/sr.png" alt="星铁">
+                <img src="file://{{pp}}/resource/img/sr.png" alt="星铁">
                 <div class="resource-pack-info">
                     <h3>星铁图包</h3>
                     <p>当前版本: {{ggz_sr_version}}</p>
@@ -39,7 +148,7 @@
                 </div>
             </div>
             <div class="resource-pack">
-                <img src="../img/zzz.png" alt="绝区零">
+                <img src="file://{{pp}}/resource/img/zzz.png" alt="绝区零">
                 <div class="resource-pack-info">
                     <h3>绝区零图包</h3>
                     <p>当前版本: {{ggz_zzz_version}}</p>
@@ -47,7 +156,7 @@
                 </div>
             </div>
             <div class="resource-pack">
-                <img src="../img/ww.png" alt="鸣潮">
+                <img src="file://{{pp}}/resource/img/ww.png" alt="鸣潮">
                 <div class="resource-pack-info">
                     <h3>鸣潮图包</h3>
                     <p>当前版本: {{ggz_ww_version}}</p>
