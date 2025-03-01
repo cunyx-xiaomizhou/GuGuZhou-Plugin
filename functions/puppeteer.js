@@ -4,7 +4,14 @@ async function puppeteer(data, t = "url", r = "buffer") {
   let browser;
   try {
     logger.mark("启动浏览器");
-    browser = await Pup.launch();
+    browser = await Pup.launch({
+      args: [
+        "--disable-gpu",
+        "--disable-setuid-sandbox",
+        "--no-sandbox",
+        "--no-zygote",
+      ],
+    });
     const page = await browser.newPage();
 
     if (t === "url") {
