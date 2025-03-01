@@ -3,8 +3,10 @@ import { load } from "./load.js";
 import pkg from "./pkg/index.js";
 import { puppeteer } from "./puppeteer.js";
 import { config } from "./../config/config.js";
-const pp = `${process.cwd()}/plugins/${(await info()).name}`;
-
+import { fileURLToPath } from 'url'
+import path from 'path'
+const Path = process.cwd()
+const __dirname = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..') + '/'
 async function game(e) {
   const msg = e.msg.toLowerCase();
   const regex =
@@ -34,7 +36,7 @@ let ggz = {
   info: info,
   load: load,
   config: config,
-  path: pp,
+  path: __dirname,
   pkg: pkg,
   game: game,
   replace: replace,

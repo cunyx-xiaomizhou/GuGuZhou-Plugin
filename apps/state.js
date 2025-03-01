@@ -40,10 +40,10 @@ export class ggz_state extends plugin {
       ggz_version: coreVersion,
       ggz_version_view: (
         await this.execGitShow(path.join(__dirname, "../"), "package.json")
-      ).v,
+      ).version,
       uin: Bot.uin || 2996849867,
       nick: Bot.nickname || "云崽机器人",
-      pp: await ggz.path
+      pp: ggz.path
     };
     let htmlContent = await fs.readFile(
       path.join(__dirname, "../resource/html/state.html"),
@@ -58,7 +58,6 @@ export class ggz_state extends plugin {
       return `${p1}="file://${path.normalize(absolutePath).replace(/\\/g, "/")}"`;
     });
     htmlContent = await ggz.replace(htmlContent, value);
-    e.reply(`p:${ggz.path}\na:${await ggz.path}`)
     const replacedContent = await ggz.replace(htmlContent, value);
     await e.reply(segment.image('base64://'+(await ggz.puppeteer(replacedContent, "html", "base64"))));
 
