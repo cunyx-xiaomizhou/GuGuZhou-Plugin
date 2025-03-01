@@ -1,10 +1,10 @@
-import puppeteer from 'puppeteer';
+import { puppeteer as Pup } from 'puppeteer';
 
 async function puppeteer(data, t = 'url', r = 'buffer') {
     let browser;
     try {
         logger.mark('启动浏览器');
-        browser = await puppeteer.launch();
+        browser = await Pup.launch();
         const page = await browser.newPage();
 
         if (t === 'url') {
