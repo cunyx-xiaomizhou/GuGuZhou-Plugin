@@ -43,7 +43,8 @@ export class ggz_state extends plugin {
       ).version,
       uin: Bot.uin || 2996849867,
       nick: Bot.nickname || "云崽机器人",
-      pp: ggz.path
+      pp: ggz.path,
+      port: Bot.server.address().port
     };
     let htmlContent = await fs.readFile(
       path.join(__dirname, "../resource/html/state.html"),

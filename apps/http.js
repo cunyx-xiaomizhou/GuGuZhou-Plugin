@@ -1,18 +1,23 @@
-import httpServer from 'http-server';
 import path from 'path';
 import ggz from '#ggz';
-
+import express from 'express';
 const resourcePath = path.join(ggz.path, 'resource');
-
-const port = await ggz.config('server', 'port');
-
-const server = httpServer.createServer({
-  root: resourcePath,
-  cors: true,
-  cache: -1,
-});
-
-server.listen(port, () => {
-  console.log(`服务器已启动，访问地址：http://localhost:${port}`);
-  console.log(`资源目录：${resourcePath}`);
-});
+import fs from "fs/promises"
+const isTrss = !(JSON.parse((await fs.readFile(path.join(process.cwd(),"package.json")))).dependencies?.icqq)
+if (isTrss){
+const Router = express.Router()
+Bot.express.use("/GuGuZhou",Router)
+Router.use("/:keys",async (req,res,next)=>handler(req,res,next))
+}else{ 
+  const app = express();
+  app.use('/GuGuZhou', express.static(resourcePath));
+  app.use('/GuGuZhou/:keys', handler);
+  Bot.express = app
+  Bot.server = Bot.express.listen(2536, () => {
+    logger.info('[GuGuZhou] server started on port 2536');
+  })
+}
+async function handler(req, res, _next) {
+  const filePath = path.join(resourcePath, 'img', req.params.keys+".png");
+  res.sendFile(filePath);
+}

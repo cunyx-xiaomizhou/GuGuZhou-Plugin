@@ -34,7 +34,7 @@ results.forEach((result, index) => {
     apps[name] = result.value[Object.keys(result.value)[0]];
   } else {
     logger.warn(`[咕咕粥插件] 可选模块 [${name}] 加载跳过`);
-    logger.debug(result.reason);
+    logger.error(result.reason);
   }
 });
 
