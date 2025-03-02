@@ -18,39 +18,15 @@ export class state extends plugin {
   }
 
   async state (e) {
-    const [ ys_LocalVersion, sr_LocalVersion, zzz_LocalVersion, ww_LocalVersion ] = await Promise.all([
-      Utils.getLocalVersion('YS'),
-      Utils.getLocalVersion('SR'),
-      Utils.getLocalVersion('ZZZ'),
-      Utils.getLocalVersion('WW')
-    ])
-
-    const [ ys_RemoteVersion, sr_RemoteVersion, zzz_RemoteVersion, ww_RemoteVersion ] = await Promise.all([
-      Utils.getRemoteVersion('YS'),
-      Utils.getRemoteVersion('SR'),
-      Utils.getRemoteVersion('ZZZ'),
-      Utils.getRemoteVersion('WW')
-    ])
-
-    const avatarUrl = await Utils.getAvatarUrl(e, e.self_id)
-    const renderData = {
-      Avatar_Url: avatarUrl,
-      uin: Bot[e.self_id].uin,
-      Plugin_AliasName: Version.Plugin_AliasName || '咕咕粥',
-      Plugin_Name: Version.Plugin_Name || 'GuGuZhou-Plugin',
-      Plugin_Version: Version.Plugin_Version || '未知',
-      Plugin_RemoteVersion: await Version.Plugin_RemoteVersion || '未知',
-      ys_LocalVersion,
-      sr_LocalVersion,
-      zzz_LocalVersion,
-      ww_LocalVersion,
-      ys_RemoteVersion,
-      sr_RemoteVersion,
-      zzz_RemoteVersion,
-      ww_RemoteVersion
-    }
-
-    const img = await Render.render('state/index', renderData)
-    await e.reply(img)
+    const gv = (pkg) => await ggz.pkg.getVersion(pkg);
+    //let { vp, vg, vs, vz, vw } = {
+    let obj = {
+      vp: await gv('Plugin'),
+      vg: await gv('GS'),
+      vs: await gv('SR'),
+      vz: await gv('ZZZ'),
+      vw: await gv('WW')
+    };
+    e.reply(JSON.stringify(obj));
   }
 }
