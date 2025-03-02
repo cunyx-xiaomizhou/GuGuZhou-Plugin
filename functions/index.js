@@ -41,7 +41,7 @@ export default new (class GGZ {
 
   async getRes(_path) {
     return await fs.readFile(
-      path.join(__dirname, "../resources", _path),
+      path.join(__dirname, "../resource", _path),
       "utf8",
     )
   }
