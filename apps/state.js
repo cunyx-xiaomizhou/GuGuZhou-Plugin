@@ -17,14 +17,22 @@ export class state extends plugin {
 
   async state(e) {
     const gv = async (pkg) => await ggz.pkg.getVersion(pkg)
-    //let { vp, vg, vs, vz, vw } = {
-    let obj = {
+    let { vp, vg, vs, vz, vw } = {
       vp: await gv("Plugin"),
       vg: await gv("GS"),
       vs: await gv("SR"),
       vz: await gv("ZZZ"),
       vw: await gv("WW"),
     }
-    e.reply(JSON.stringify(obj))
+    let host = `http://127.0.0.1:${ await ggz.config('server', 'port')}`;
+    const gz = {
+      uin: Bot[e.self_id].uin || 2996849867,
+      nick: Bot.nickname || '云崽机器人',
+      copyright: ggz.replace({version:vp.local}, await ggz.getRes('common/copyright.html')),
+      root: `:root{--Genshen-font: '${host}/resource/font/Genshin.woff'}`,
+      host: host,
+      ggz_version: vp.loval,
+      ggz_version_view: vp.view
+    };
   }
 }
