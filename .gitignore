@@ -1,4 +1,5 @@
-node_modules/*
+resource/GS
+resource/SR
+resource/ZZZ
+resource/WW
 config/config/*
-resources/Gallery/*
-apps/test.js
