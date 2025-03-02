@@ -3,7 +3,7 @@ import { exec } from 'child_process'
 import { promisify } from 'util'
 
 import { Data, Version } from '#components'
-export const proxy = "https://fd.admilk.top"
+export const proxy = "https://proxy.itop.cc"
 import { isAbroad } from './common.js'
 
 const execAsync = promisify(exec)
