@@ -1,7 +1,6 @@
 import { info } from "./info.js";
 import { load } from "./load.js";
 import pkg from "./pkg/index.js";
-import { puppeteer } from "./puppeteer.js";
 import { config } from "./../config/config.js";
 import { fileURLToPath } from 'url'
 import path from 'path'
@@ -39,7 +38,6 @@ let ggz = {
   path: __dirname,
   pkg: pkg,
   game: game,
-  replace: replace,
-  puppeteer: puppeteer,
+  replace: replace
 };
 export default ggz;
