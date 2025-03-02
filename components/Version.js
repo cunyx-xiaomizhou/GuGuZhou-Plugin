@@ -17,10 +17,10 @@ const Plugin_Name = basename(Plugin_Path)
 
 
 const remoteVersion = (async () => {
-  const gitApi = Utils.isAbroad ? 'https://api.github.com' : `${Utils.proxy}/https://api.github.com`
+  const gitApi = Utils.isAbroad ? 'https://api.github.com' : `${Utils.proxy}/api.github.com`
   const { data } = await axios.get(`${gitApi}/repos/cunyx-xiaomizhou/GuGuZhou-Plugin/contents/package.json`)
   if(data){
-    const url =  await Utils.isAbroad ? data.download_url : `${Utils.proxy}/${data.download_url}`
+    const url =  await Utils.isAbroad ? data.download_url : `${Utils.proxy}/${data.download_url.replace("https://","")}`
     return (await axios.get(url)).data.version
   }
   return '未知版本'

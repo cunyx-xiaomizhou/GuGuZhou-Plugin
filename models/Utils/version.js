@@ -45,10 +45,10 @@ export async function getRemoteVersion(name) {
   const abroad = await isAbroad;
   const gitApi = abroad
     ? 'https://api.github.com'
-    : `${proxy}/https://api.github.com`;
+    : `${proxy}/api.github.com`;
   const gitUrl = abroad
     ? 'https://github.com'
-    : `${proxy}/https://github.com`;
+    : `${proxy}/github.com`;
     logger.debug(`abroad: ${abroad}, gitApi: ${gitApi}, gitUrl: ${gitUrl}`);
   const repoUrl = `${gitUrl}/cunyx-xiaomizhou/GuGuZhou-${name}`;
 
@@ -57,7 +57,7 @@ export async function getRemoteVersion(name) {
       `${gitApi}/repos/cunyx-xiaomizhou/GuGuZhou-${name}/contents/info.json`
     );
     if (data) {
-      return (await axios.get(!abroad? proxy +"/"+ data.download_url:data.download_url)).data.version;
+      return (await axios.get(!abroad? proxy +"/"+ data.download_url.replace("https://",""):data.download_url)).data.version;
     }
     const { stdout } = await execAsync(
       `git ls-remote --tags --sort=-v:refname ${repoUrl}`
