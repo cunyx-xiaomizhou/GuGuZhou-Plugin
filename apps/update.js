@@ -1,5 +1,5 @@
 import { update as Update } from '../../other/update.js'
-
+import { Version } from '#components'
 export class Plugin_update extends plugin {
   constructor () {
     super({
