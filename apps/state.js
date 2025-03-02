@@ -1,6 +1,4 @@
-import { Render, Version } from '#components'
-import { Utils } from '#models'
-
+import ggz from "#ggz";
 export class state extends plugin {
   constructor () {
     super({
@@ -18,7 +16,7 @@ export class state extends plugin {
   }
 
   async state (e) {
-    const gv = (pkg) => await ggz.pkg.getVersion(pkg);
+    const gv = async (pkg) => await ggz.pkg.getVersion(pkg);
     //let { vp, vg, vs, vz, vw } = {
     let obj = {
       vp: await gv('Plugin'),

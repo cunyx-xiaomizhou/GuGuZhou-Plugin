@@ -1,5 +1,4 @@
 import { update as Update } from '../../other/update.js'
-import { Version } from '#components'
 export class Plugin_update extends plugin {
   constructor () {
     super({
@@ -18,7 +17,7 @@ export class Plugin_update extends plugin {
   }
   async update_plugin (e) {
     const Type = e.msg.includes('强制') ? '#强制更新' : '#更新'
-    if (e) e.msg = Type + Version.Plugin_Name
+    if (e) e.msg = Type + "GuGuZhou-Plugin"
     const up = new Update(e)
     up.e = e
     return up.update()

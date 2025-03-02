@@ -6,7 +6,7 @@ import fs from 'fs/promises';
 
 const __dirname = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..') + '/';
 
-export default new class GGZ {
+export default new (class GGZ {
   constructor() {
     this.config = config;
     this.pkg = pkg;
@@ -102,4 +102,4 @@ export default new class GGZ {
     }
     logger.info(`${info_.name_zh}${info_.version}初始化完成！`);
   }
-};
+})()
