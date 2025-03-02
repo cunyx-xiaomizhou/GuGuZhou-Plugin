@@ -28,7 +28,7 @@ export class state extends plugin {
     const gz = {
       uin: Bot[e.self_id].uin || 2996849867,
       nick: Bot.nickname || '云崽机器人',
-      copyright: ggz.replace(await ggz.getRes('common/copyright.html'), {version:vp.local}),
+      copyright: await ggz.replace(await ggz.getRes('common/copyright.html'), {version:vp.local}),
       root: `:root{--Genshen-font: '${host}/resource/font/Genshin.woff';}`,
       host: host,
       ggz_version: vp.loval,
