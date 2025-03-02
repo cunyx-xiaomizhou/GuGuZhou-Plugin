@@ -7,7 +7,18 @@
   "dependencies": {
     "http-server": "^14.1.1"
   },
+  "scripts": {
+    "fix": "prettier --write ./**/*.js"
+  },
   "imports": {
     "#ggz": "./functions/index.js"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": false,
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "endOfLine": "auto"
   }
 }

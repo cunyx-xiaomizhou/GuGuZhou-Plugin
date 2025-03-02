@@ -1,7 +1,7 @@
-import download from "./download.js";
+import download from "./download.js"
 
 const pkg = {
   down: download,
-};
+}
 
-export default pkg;
+export default pkg

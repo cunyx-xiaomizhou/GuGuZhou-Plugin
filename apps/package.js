@@ -1,5 +1,5 @@
-import ggz from "#ggz";
-import { exec } from "child_process";
+import ggz from "#ggz"
+import { exec } from "child_process"
 export class downloadImagePackage_ggz extends plugin {
   constructor() {
     super({
@@ -13,26 +13,26 @@ export class downloadImagePackage_ggz extends plugin {
           fnc: "imagePackage",
         },
       ],
-    });
+    })
   }
   async imagePackage(e) {
     if (!e.isMaster) {
-      e.reply(`只有主人才可以命令${Bot.nickname || "咕咕粥"}哦(๑＞ڡ＜)☆`);
-      return true;
+      e.reply(`只有主人才可以命令${Bot.nickname || "咕咕粥"}哦(๑＞ڡ＜)☆`)
+      return true
     }
-    let game = await ggz.game(e);
-    let rp = `${ggz.path}/resources/${game}`;
+    let game = await ggz.game(e)
+    let rp = `${ggz.path}/resources/${game}`
     if (e.msg.includes("下载")) {
-      let source = await ggz.config("source", "source");
-      let download_link = (await ggz.config("source", source)) + `${game}.git`;
+      let source = await ggz.config("source", "source")
+      let download_link = (await ggz.config("source", source)) + `${game}.git`
       try {
-        e.reply("开始尝试下载咕咕粥图包至本地", true);
-        ggz.pkg.down.download(e, download_link, rp, game);
+        e.reply("开始尝试下载咕咕粥图包至本地", true)
+        ggz.pkg.down.download(e, download_link, rp, game)
       } catch (err) {
         logger.error(
           `[${(await ggz.info()).name}]${download_link}克隆本地失败\n\n${err}`,
-        );
-        e.reply(`下载过程出现错误啦！请截图反馈~\n\n${err}`, true);
+        )
+        e.reply(`下载过程出现错误啦！请截图反馈~\n\n${err}`, true)
       }
     } else if (e.msg.includes("更新")) {
     } else if (e.msg.includes("删除")) {
