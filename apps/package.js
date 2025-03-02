@@ -21,10 +21,10 @@ export class downloadImagePackage_ggz extends plugin {
       return true;
     }
     let game = await ggz.game(e);
-    var rp = `${await ggz.path}/resource/${game}`;
+    let rp = `${ggz.path}/resources/Gallery/${game}`;
     if (e.msg.includes("下载")) {
-      var source = await ggz.config("source", "source");
-      var download_link = (await ggz.config("source", source)) + `${game}.git`;
+      let source = await ggz.config("source", "source");
+      let download_link = (await ggz.config("source", source)) + `${game}.git`;
       try {
         e.reply("开始尝试下载咕咕粥图包至本地", true);
         ggz.pkg.down.download(e, download_link, rp, game);
