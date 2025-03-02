@@ -25,7 +25,7 @@ async function getVersion(pkg) {
       result.local = localJson.version
     }
 
-    const gitCommand = `git -C ${ggz.path} show HEAD:${jsonFileName}`
+    const gitCommand = `git -C ${localPath} show HEAD:${jsonFileName}`
     const gitOutput = execSync(gitCommand, { encoding: "utf-8" })
     const gitJson = JSON.parse(gitOutput)
     if (gitJson && gitJson.version) {
