@@ -32,7 +32,16 @@ export class state extends plugin {
       root: `:root{--Genshen-font: '${host}/resource/font/Genshin.woff'}`,
       host: host,
       ggz_version: vp.loval,
-      ggz_version_view: vp.view
+      ggz_version_view: vp.view,
+      ggz_ys_version: vg.loval,
+      ggz_ys_version_view: vg.view,
+      ggz_sr_version: vs.loval,
+      ggz_sr_version_view: vs.view,
+      ggz_zzz_version: vz.loval,
+      ggz_zzz_version_view: vz.view,
+      ggz_ww_version: vw.loval,
+      ggz_ww_version_view: vw.view
     };
+    e.reply(JSON.stringify(gz));
   }
 }
