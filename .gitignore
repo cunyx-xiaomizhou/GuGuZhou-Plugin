@@ -3,3 +3,5 @@ resource/SR
 resource/ZZZ
 resource/WW
 config/config/*
+node_modules/*
+resources/Gallery/*
