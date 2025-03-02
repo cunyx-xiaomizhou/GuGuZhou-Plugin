@@ -21,7 +21,7 @@ export class downloadImagePackage_ggz extends plugin {
       return true
     }
     let game = await ggz.game(e)
-    let rp = `${ggz.path}/resources/${game}`
+    let rp = `${ggz.path}/resource/${game}`
     if (e.msg.includes("下载")) {
       let source = await ggz.config("source", "source")
       let download_link = (await ggz.config("source", source)) + `${game}.git`
