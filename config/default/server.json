@@ -1,0 +1,8 @@
+{
+    "config": {
+        "user": "admin",
+        "password": "123456",
+        "port": 44925
+    },
+    "version": "Beta 0.1"
+}
