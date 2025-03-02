@@ -53,7 +53,7 @@ try {
   })
 
   logger.info('--------٩(๑•̀ω•́๑)۶----------')
-  logger.info(`${info.name}${info.versuon}初始化中......`)
+  logger.info(`${info.name}${info.version}初始化中......`)
 
 } catch (error) {
   logger.error(chalk.red.bold(`❌ 初始化失败: ${error}`))
