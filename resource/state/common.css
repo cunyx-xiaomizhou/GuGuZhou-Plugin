@@ -1,4 +1,19 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+div.copyright {
+    font-family: 'Genshin', Arial, Helvetica, sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+div.copyright span.version {
+    color: darkgoldenrod;
+    text-shadow: 2px 2px 4px black;
+}
+@font-face {
+    font-family: 'Genshin';
+    src: url(var(--Genshin-font));
 }
