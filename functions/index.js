@@ -4,6 +4,7 @@ import { fileURLToPath } from "url"
 import path from "path"
 import fs from "fs/promises"
 
+// 此dirname为插件根目录绝对路径
 const __dirname =
   path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..") + "/"
 
@@ -40,16 +41,13 @@ export default new (class GGZ {
   }
 
   async getRes(_path) {
-    return await fs.readFile(
-      path.join(__dirname, "resource", _path),
-      "utf8",
-    )
+    return await fs.readFile(path.join(__dirname, "resource", _path), "utf8")
   }
 
   async info() {
     const pluginPath = `${process.cwd()}/plugins/GuGuZhou-Plugin/`
     const pluginData = await JSON.parse(
-      await fs.readFile(`${pluginPath}package.json`, "utf8"),
+      await fs.readFile(`${pluginPath}package.json`, "utf8")
     )
     return pluginData
   }
