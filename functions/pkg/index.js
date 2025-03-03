@@ -1,9 +1,9 @@
 import download from "./download.js"
-import { getVersion } from './getVersion.js'
+import { getVersion } from "./getVersion.js"
 
 const pkg = {
   down: download,
-  getVersion: getVersion
+  getVersion: getVersion,
 }
 
 export default pkg

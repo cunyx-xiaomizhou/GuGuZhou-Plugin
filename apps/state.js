@@ -24,11 +24,13 @@ export class state extends plugin {
       vz: await gv("ZZZ"),
       vw: await gv("WW"),
     }
-    let host = `http://127.0.0.1:${ await ggz.config('server', 'port')}`;
+    let host = `http://127.0.0.1:${await ggz.config("server", "port")}`
     const gz = {
       uin: Bot[e.self_id].uin || 2996849867,
-      nick: Bot.nickname || '云崽机器人',
-      copyright: await ggz.replace(await ggz.getRes('common/copyright.html'), {version:vp.local}),
+      nick: Bot.nickname || "云崽机器人",
+      copyright: await ggz.replace(await ggz.getRes("common/copyright.html"), {
+        version: vp.local,
+      }),
       root: `:root{--Genshen-font: '${host}/resource/font/Genshin.woff';}`,
       host: host,
       ggz_version: vp.loval,
@@ -40,8 +42,8 @@ export class state extends plugin {
       ggz_zzz_version: vz.loval,
       ggz_zzz_version_view: vz.view,
       ggz_ww_version: vw.loval,
-      ggz_ww_version_view: vw.view
-    };
-    e.reply(JSON.stringify(gz));
+      ggz_ww_version_view: vw.view,
+    }
+    e.reply(JSON.stringify(gz))
   }
 }

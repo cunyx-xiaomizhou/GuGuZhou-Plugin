@@ -47,7 +47,7 @@ export default new (class GGZ {
   async info() {
     const pluginPath = `${process.cwd()}/plugins/GuGuZhou-Plugin/`
     const pluginData = await JSON.parse(
-      await fs.readFile(`${pluginPath}package.json`, "utf8")
+      await fs.readFile(`${pluginPath}package.json`, "utf8"),
     )
     return pluginData
   }
